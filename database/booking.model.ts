@@ -45,9 +45,9 @@ BookingSchema.pre('save', async function (next) {
     try {
       // Dynamically import Event model to avoid circular dependency
       const Event = mongoose.models.Event || (await import('./event.model')).default;
-      
+
       const eventExists = await Event.exists({ _id: this.eventId });
-      
+
       if (!eventExists) {
         return next(new Error('Referenced event does not exist'));
       }

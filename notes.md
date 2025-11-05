@@ -1,0 +1,1 @@
+all env variables which starts with NEXT_PUBLIC are accessible in both client and server
